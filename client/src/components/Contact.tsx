@@ -20,35 +20,17 @@ export default function Contact() {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-      if (!response.ok) {
-        throw new Error("Failed to send");
-      }
-      toast.success("Thank you! Your consultation request has been sent.");
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        message: "",
-      });
-    }
-    catch (error) {
-      toast.error("Failed to send request. Please try again.");
-      console.error(error);
-    }
-    finally {
+
+    // Simulate form submission
+    setTimeout(() => {
+      toast.success('Thank you for your message! We will contact you soon.');
+      setFormData({ name: '', email: '', phone: '', message: '' });
       setIsSubmitting(false);
-    }
+    }, 1000);
   };
 
   const offices = [
