@@ -35,9 +35,9 @@ export default function Services() {
     },
     {
       icon: Shield,
-      title: 'Criminal Defense',
-      description: 'Robust defense representation in criminal matters before courts and tribunals.',
-      items: ['Criminal Defense', 'Consumer Court Cases', 'Debt Recovery', 'Tribunal Proceedings'],
+      title: 'Notary Services',
+      description: 'Authentic verification and legal execution of critical documents before official authorities.',
+      items: ['Document Authentication', 'Statutory Attestation', 'Affidavits & Declarations', 'Notarial Certifications'],
     },
   ];
 
