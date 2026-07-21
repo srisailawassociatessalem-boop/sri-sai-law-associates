@@ -55,7 +55,7 @@ export default function Contact() {
     {
       name: 'Head Office',
       address: 'D.No.8/6, Thangam Complex, Ragavan Street, Swarnapuri, Salem - 636 004, Tamil Nadu',
-      landline: '0427-7965972',
+      phone: '0427-7965972',
       mobile: '09944306768',
       email: 'srisailawassociates.salem@gmail.com',
       hours: 'Monday - Friday: 10:00 AM - 8:30 PM',
@@ -63,7 +63,7 @@ export default function Contact() {
     {
       name: 'Branch Office',
       address: 'D.No.104/1B, Sri Murugan Complex, Near Madha Medical, Vinayagapuram, Attur, Salem - 636 102, Tamil Nadu',
-      landline: '04282-252192',
+      phone: '04282-252192',
       mobile: '09944306768',
       email: 'srisailawassociates.attur@gmail.com',
       hours: 'Monday - Friday: 10:00 AM - 8:30 PM',
