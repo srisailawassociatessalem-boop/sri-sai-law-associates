@@ -20,31 +20,51 @@ export default function Contact() {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
-    // Simulate form submission
-    setTimeout(() => {
-      toast.success('Thank you for your message! We will contact you soon.');
-      setFormData({ name: '', email: '', phone: '', message: '' });
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      if (!response.ok) {
+        throw new Error("Failed to send");
+      }
+      toast.success("Thank you! Your consultation request has been sent.");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+    }
+    catch (error) {
+      toast.error("Failed to send request. Please try again.");
+      console.error(error);
+    }
+    finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   const offices = [
     {
       name: 'Head Office',
       address: 'D.No.8/6, Thangam Complex, Ragavan Street, Swarnapuri, Salem - 636 004, Tamil Nadu',
-      phone: '0427-7965972',
+      landline: '0427-7965972',
+      mobile: '09944306768',
       email: 'srisailawassociates.salem@gmail.com',
       hours: 'Monday - Friday: 10:00 AM - 8:30 PM',
     },
     {
       name: 'Branch Office',
       address: 'D.No.104/1B, Sri Murugan Complex, Near Madha Medical, Vinayagapuram, Attur, Salem - 636 102, Tamil Nadu',
-      phone: '04282-252192',
+      landline: '04282-252192',
+      mobile: '09944306768',
       email: 'srisailawassociates.attur@gmail.com',
       hours: 'Monday - Friday: 10:00 AM - 8:30 PM',
     },
