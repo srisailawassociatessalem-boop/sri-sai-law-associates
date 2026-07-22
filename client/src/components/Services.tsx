@@ -24,8 +24,8 @@ export default function Services() {
     {
       icon: Building2,
       title: 'Corporate Law',
-      description: 'Strategic legal advice for businesses and corporate entities on compliance and transactions.',
-      items: ['Corporate Compliance', 'Due Diligence', 'Business Transactions', 'Company Law Matters'],
+      description: 'End-to-end corporate advisory covering title verification, public record searches, contract vetting, and institutional banking compliance.',
+      items: ['Legal Scrutiny Report(LSR)', 'Legal Search Report', 'Document Vetting Report', 'Banking & NBFC Matters'],
     },
     {
       icon: DollarSign,
